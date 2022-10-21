@@ -1,0 +1,45 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    background-color: rgb(116, 5, 219);
+    
+}
+
+
+.newContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    background-color: rgb(5, 219, 16);
+}
+
+
+form{
+    width: 1000px;
+}
+
+
+
+:host ::ng-deep .p-button {
+    margin: 0 .5rem 0 0;
+    min-width: 10rem;
+}
+
+p {
+    margin: 0;
+}
+
+.confirmation-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+:host ::ng-deep .p-dialog .p-button {
+    min-width: 6rem;
+}

@@ -1,0 +1,86 @@
+<h1 style="text-align: center; color: red">
+  Indian Stock Market Average Calculator
+</h1>
+
+<p-card class="container">
+  <form
+    [formGroup]="login"
+    style="border-radius: 1px solid black"
+    autocomplete="off"
+  >
+    <div class="grid p-fluid">
+      <div class="field col-12 md:col-6">
+        <h2 style="color: rgb(240, 25, 25)">First Buy</h2>
+        <label for="minmax-buttons">Units</label>
+        <p-inputNumber
+          formControlName="unit1"
+          mode="decimal"
+          [showButtons]="true"
+          inputId="minmax-buttons"
+        >
+        </p-inputNumber>
+
+        <label for="stacked">Price</label>
+        <p-inputNumber
+          formControlName="price1"
+          [showButtons]="true"
+          inputId="stacked"
+          mode="currency"
+          currency="INR"
+        >
+        </p-inputNumber>
+      </div>
+
+      <div class="field col-12 md:col-6">
+        <h2 style="color: rgb(240, 25, 25)">Second Buy</h2>
+        <label for="minmax-buttons">Units</label>
+        <p-inputNumber
+          formControlName="unit2"
+          mode="decimal"
+          [showButtons]="true"
+          inputId="minmax-buttons"
+        >
+        </p-inputNumber>
+
+        <label for="stacked">Price</label>
+        <p-inputNumber
+          formControlName="price2"
+          [showButtons]="true"
+          inputId="stacked"
+          mode="currency"
+          currency="INR"
+        >
+        </p-inputNumber>
+      </div>
+    </div>
+  </form>
+
+  <button
+    pButton
+    pRipple
+    type="button"
+    label="Calculate Average"
+    class="p-button-success"
+    (click)="calculate()"
+  ></button>
+  &nbsp;
+
+  <button
+    pButton
+    pRipple
+    type="button"
+    label="Clear"
+    class="p-button-info"
+  ></button>
+</p-card>
+
+<p-card class="newContainer" *ngIf="avgPrice">
+  <h2
+    style="text-align: center; color: green; margin-top: 5px; text-indent: 50px"
+  >
+    <h3>Total Units is: {{ totalUnit }}</h3>
+
+    <h3>Average price is: {{ avgPrice | number }}</h3>
+    <h3>Total Amount is: {{ totalPrice }}</h3>
+  </h2>
+</p-card>
